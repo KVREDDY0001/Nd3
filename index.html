@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>ND3 Interactive - Experience Like It Exists | Contemporary Design Studio</title>
+    <meta name="description" content="ND3 Interactive - Contemporary architectural design studio specializing in luxury interior and exterior design. Experience like it exists.">
+    <meta name="keywords" content="architecture, interior design, exterior design, luxury homes, contemporary design, ND3 Interactive, KV Reddy">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="ND3 Interactive - Experience Like It Exists">
+    <meta property="og:description" content="Contemporary architectural design studio creating spaces that transcend aesthetics.">
+    <meta property="og:image" content="/images/logo/profile1.jpg">
+    <meta property="og:url" content="https://nd3.site">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/logo/profile1.jpg">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/src/style.css">
+</head>
+<body data-theme="dark">
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+    
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loading">
+        <div class="loader">
+            <div class="logo-loader">ND3</div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <p class="loading-text"><span id="loading-percentage">0</span>%</p>
+        </div>
+    </div>
+    
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+    </button>
+    
+    <!-- Hamburger Menu -->
+    <div class="hamburger-menu" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    
+    <!-- Navigation Overlay -->
+    <nav class="nav-overlay" id="nav-overlay">
+        <ul>
+            <li><a href="#home" class="nav-link" data-section="home">Home</a></li>
+            <li class="has-submenu">
+                <a href="#work" class="nav-link">Work</a>
+                <ul class="submenu">
+                    <li><a href="#interior" class="nav-link" data-section="interior">Interior</a></li>
+                    <li><a href="#exterior" class="nav-link" data-section="exterior">Exterior</a></li>
+                </ul>
+            </li>
+            <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+            <li><a href="#studio" class="nav-link" data-section="studio">Studio</a></li>
+            <li><a href="#blog" class="nav-link" data-section="blog">Blog</a></li>
+            <li><a href="#testimonials" class="nav-link" data-section="testimonials">Testimonials</a></li>
+            <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Canvas for Three.js -->
+    <canvas id="webgl-canvas"></canvas>
+    
+    <!-- Sphere Text Overlay -->
+    <div class="sphere-text" id="sphere-text"></div>
+    
+    <!-- Particles Container -->
+    <div id="particles-container"></div>
+    
+    <!-- Main Content -->
+    <div class="content-wrapper" id="content">
+        
+        <!-- Home Section -->
+        <section id="home" class="section home-section">
+            <div class="home-content">
+                <h1 class="brand-name fade-in">ND3 INTERACTIVE</h1>
+                <p class="tagline fade-in">Experience like it exists</p>
+                <div class="scroll-indicator fade-in">
+                    <span>Explore</span>
+                    <div class="scroll-line"></div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Interior Projects Section -->
+        <section id="interior" class="section interior-section">
+            <div class="container">
+                <h2 class="section-title">Interior Projects</h2>
+                <p class="section-subtitle">Where elegance meets functionality</p>
+                
+                <div class="projects-grid">
+                    <!-- Aish Farmhouse Project -->
+                    <div class="project-card" data-project="aish-farmhouse">
+                        <div class="project-image">
+                            <img src="/images/interior/aish-farmhouse/thumb.jpg" alt="Aish Farmhouse" loading="lazy">
+                            <div class="project-overlay">
+                                <button class="view-project-btn">View Details</button>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>AISH FARMHOUSE</h3>
+                            <p class="project-location">Faridabad</p>
+                            <p class="project-excerpt">A Contemporary Luxury Farmhouse Where Nature Meets Design</p>
+                            <a href="https://www.coohom.com/pub/tool/panorama/show?obsPlanId=3FO3CNNIKDBX" target="_blank" class="enter-home-btn">
+                                ENTER THE HOME
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Placeholder Projects -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="/images/interior/placeholder1.jpg" alt="Luxury Villa" loading="lazy">
+                            <div class="project-overlay">
+                                <button class="view-project-btn">Coming Soon</button>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>LUXURY VILLA</h3>
+                            <p class="project-location">Location TBD</p>
+                            <p class="project-excerpt">Contemporary elegance redefined</p>
+                            <button class="enter-home-btn disabled">COMING SOON</button>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="/images/interior/placeholder2.jpg" alt="Modern Apartment" loading="lazy">
+                            <div class="project-overlay">
+                                <button class="view-project-btn">Coming Soon</button>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>MODERN APARTMENT</h3>
+                            <p class="project-location">Location TBD</p>
+                            <p class="project-excerpt">Urban sophistication at its finest</p>
+                            <button class="enter-home-btn disabled">COMING SOON</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Exterior Projects Section -->
+        <section id="exterior" class="section exterior-section">
+            <div class="container">
+                <h2 class="section-title">Exterior Projects</h2>
+                <p class="section-subtitle">Architectural excellence beyond boundaries</p>
+                
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="/images/exterior/facade1.jpg" alt="Contemporary Facade" loading="lazy">
+                            <div class="project-overlay">
+                                <button class="view-project-btn">Coming Soon</button>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>CONTEMPORARY FACADE</h3>
+                            <p class="project-location">Location TBD</p>
+                            <p class="project-excerpt">Bold architectural statement</p>
+                            <button class="enter-home-btn disabled">COMING SOON</button>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="/images/exterior/landscape1.jpg" alt="Garden Landscape" loading="lazy">
+                            <div class="project-overlay">
+                                <button class="view-project-btn">Coming Soon</button>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>GARDEN LANDSCAPE</h3>
+                            <p class="project-location">Location TBD</p>
+                            <p class="project-excerpt">Nature-inspired outdoor sanctuary</p>
+                            <button class="enter-home-btn disabled">COMING SOON</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- About Section -->
+        <section id="about" class="section about-section">
+            <div class="container">
+                <h2 class="section-title">About Us</h2>
+                <p class="section-subtitle">The visionaries behind ND3 Interactive</p>
+                
+                <div class="team-grid">
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="/images/team/kv-reddy.jpg" alt="KV Reddy" loading="lazy">
+                        </div>
+                        <div class="team-info">
+                            <h3>KV REDDY</h3>
+                            <p class="team-role">Founder</p>
+                            <p class="team-bio">Visionary architect and design leader with a passion for creating spaces that transcend aesthetics and functionality. KV Reddy founded ND3 Interactive to redefine how people experience their environments.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="/images/team/sv-rao.jpg" alt="SV Rao" loading="lazy">
+                        </div>
+                        <div class="team-info">
+                            <h3>SV RAO</h3>
+                            <p class="team-role">Co-Founder</p>
+                            <p class="team-bio">Strategic partner and creative collaborator, SV Rao brings decades of architectural expertise and innovation to ND3 Interactive. Together, they craft experiences that exist beyond imagination.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Studio Section -->
+        <section id="studio" class="section studio-section">
+            <div class="container">
+                <h2 class="section-title">Our Studio</h2>
+                <p class="section-subtitle">Services, philosophy, and process</p>
+                
+                <!-- Services -->
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">🏛️</div>
+                        <h3>Architectural Design</h3>
+                        <p>Creating timeless structures that blend form and function</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🏠</div>
+                        <h3>Interior Design</h3>
+                        <p>Transforming spaces into experiences</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🌳</div>
+                        <h3>Landscape Design</h3>
+                        <p>Harmonizing architecture with nature</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🎨</div>
+                        <h3>3D Visualization</h3>
+                        <p>Bringing visions to life before construction</p>
+                    </div>
+                </div>
+                
+                <!-- Philosophy -->
+                <div class="philosophy-section">
+                    <h3>Our Philosophy</h3>
+                    <blockquote>
+                        "Design is not just what it looks like and feels like. Design is how it works. At ND3 Interactive, we believe in creating spaces that exist beyond imagination – where every detail tells a story, and every experience leaves a lasting impression."
+                    </blockquote>
+                </div>
+                
+                <!-- Process -->
+                <div class="process-section">
+                    <h3>Our Process</h3>
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div class="step-number">01</div>
+                            <h4>Discovery</h4>
+                            <p>Understanding your vision and requirements</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">02</div>
+                            <h4>Concept</h4>
+                            <p>Developing creative design solutions</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">03</div>
+                            <h4>Design</h4>
+                            <p>Refining every detail to perfection</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">04</div>
+                            <h4>Execution</h4>
+                            <p>Bringing the design to life</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">05</div>
+                            <h4>Experience</h4>
+                            <p>Delivering spaces that inspire</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Blog Section -->
+        <section id="blog" class="section blog-section">
+            <div class="container">
+                <h2 class="section-title">Insights & Inspiration</h2>
+                <p class="section-subtitle">Latest from our studio</p>
+                
+                <div class="blog-grid">
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <img src="/images/blog/future-design.jpg" alt="The Future of Interior Design" loading="lazy">
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-date">Coming Soon</span>
+                            <h3>The Future of Interior Design</h3>
+                            <p>Exploring emerging trends and technologies shaping the industry</p>
+                            <a href="#" class="read-more">Read More →</a>
+                        </div>
+                    </article>
+                    
+                    <article class="blog-card">
+                        <div class="blog-image">
+                            <img src="/images/blog/architecture-trends.jpg" alt="Architecture Trends" loading="lazy">
+                        </div>
+                        <div class="blog-content">
+                            <span class="blog-date">Coming Soon</span>
+                            <h3>5 Trends in Contemporary Architecture</h3>
+                            <p>What's defining modern architectural excellence</p>
+                            <a href="#" class="read-more">Read More →</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="section testimonials-section">
+            <div class="container">
+                <h2 class="section-title">Client Stories</h2>
+                <p class="section-subtitle">What our clients say about us</p>
+                
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="quote-icon">"</div>
+                        <p class="testimonial-text">Working with ND3 Interactive was an absolute pleasure. They transformed our vision into a reality that exceeded all expectations.</p>
+                        <div class="testimonial-author">
+                            <p class="author-name">Client Name</p>
+                            <p class="author-project">Luxury Villa Project</p>
+                        </div>
+                        <div class="rating">★★★★★</div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="quote-icon">"</div>
+                        <p class="testimonial-text">The attention to detail and creativity shown by the ND3 team is unmatched. Our farmhouse is now our dream sanctuary.</p>
+                        <div class="testimonial-author">
+                            <p class="author-name">Client Name</p>
+                            <p class="author-project">Farmhouse Design</p>
+                        </div>
+                        <div class="rating">★★★★★</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <h2 class="section-title">Let's Create Together</h2>
+                <p class="section-subtitle">Get in touch to start your project</p>
+                
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                            <div>
+                                <h4>Email</h4>
+                                <a href="mailto:nivirdesignstudio@gmail.com">nivirdesignstudio@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            <div>
+                                <h4>Phone</h4>
+                                <a href="tel:+919963331256">+91 9963331256</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                            </svg>
+                            <div>
+                                <h4>Instagram</h4>
+                                <a href="https://www.instagram.com/nd3.interactive" target="_blank">@nd3.interactive</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="newsletter-signup">
+                        <h3>Stay Updated</h3>
+                        <p>Subscribe to receive updates on our latest projects and design inspiration</p>
+                        <form class="newsletter-form" id="newsletter-form">
+                            <input type="email" placeholder="Enter your email" required>
+                            <button type="submit">
+                                Subscribe
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2026 ND3 Interactive. All rights reserved.</p>
+                <p>Designed & Developed with precision</p>
+            </div>
+        </footer>
+        
+    </div>
+    
+    <!-- Project Modal -->
+    <div class="project-modal" id="project-modal">
+        <button class="modal-close" id="modal-close">&times;</button>
+        <div class="modal-content">
+            <div class="modal-gallery">
+                <button class="gallery-prev">‹</button>
+                <img src="" alt="" id="modal-image">
+                <button class="gallery-next">›</button>
+            </div>
+            <div class="modal-info">
+                <h2 id="modal-title">AISH FARMHOUSE, FARIDABAD</h2>
+                <p id="modal-subtitle">A Contemporary Luxury Farmhouse Where Nature Meets Design</p>
+                <div id="modal-description">
+                    <p>Step into a sanctuary of refined elegance and open-air serenity. This bespoke contemporary farmhouse blends architectural grandeur with warm natural textures, creating a home that feels both expansive and intimate.</p>
+                    <p>Every detail has been meticulously crafted to celebrate the marriage of indoor comfort and outdoor beauty, offering a living experience that transcends traditional design boundaries.</p>
+                </div>
+                <a href="https://www.coohom.com/pub/tool/panorama/show?obsPlanId=3FO3CNNIKDBX" target="_blank" class="enter-home-btn">
+                    ENTER THE HOME
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Google Analytics (Replace GA_MEASUREMENT_ID with your actual ID) -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID');
+    </script> -->
+    
+    <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

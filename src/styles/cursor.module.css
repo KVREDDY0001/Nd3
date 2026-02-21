@@ -1,0 +1,31 @@
+.cursorDot {
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  background-color: #d4af37;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: screen;
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
+}
+
+.cursorRing {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #d4af37;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  mix-blend-mode: screen;
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
+}
+
+@media (max-width: 768px) {
+  .cursorDot,
+  .cursorRing {
+    display: none;
+  }
+}
