@@ -31,7 +31,7 @@ export default function CanvasScene({ setBg }: CanvasSceneProps) {
 
       {/* Spheres */}
       <SphereConcrete position={[-1.8, 0, 0]} setBg={setBg} />
-      <SphereMarble position={[1.8, 0, 0]} setBg={setBg} />
+      <SphereMarble position={[1.8, 0, 0]} />
     </Canvas>
   )
 }

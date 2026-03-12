@@ -36,7 +36,7 @@ export default function SphereMarble({ position }: { position: [number, number, 
         clearcoat={1}
         clearcoatRoughness={0.08}
         emissive={hovered ? '#2563eb' : '#3d1d00'}
-        emissiveIntensity={hovered ? 0.4 : 0.1}
+        emissiveIntensity={hovered ? 4 : 9}
       />
     </mesh>
   )

@@ -1,4 +1,5 @@
 /* ==================== RESET & BASE STYLES ==================== */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -31,8 +32,9 @@
     --highlight: var(--highlight-dark);
     
     /* Fonts */
-    --font-main: 'Inter', sans-serif;
-    --font-display: 'Playfair Display', serif;
+    
+    --font-main: "Bebas Neue", sans-serif;
+    --font-display: "Bebas Neue";
     
     /* Spacing */
     --spacing-xs: 0.5rem;
@@ -61,10 +63,13 @@ html {
 }
 
 body {
-    font-family: var(--font-main);
+    font-family: Bebas Neue;
     background: var(--bg);
+    background-image: "C:\Users\vigne\Downloads\Nd3\public\bg\backrground.jpg";
+    background-size: cover;
+    background-position: center;
     color: var(--text);
-    line-height: 1.6;
+    line-height: 3.6;
     overflow-x: hidden;
     transition: background-color var(--transition-slow), color var(--transition-slow);
 }
@@ -124,9 +129,20 @@ button:hover ~ .cursor-outline {
     transition: opacity var(--transition-slow), visibility var(--transition-slow);
 }
 
+.background-animation {
+    background-image: url("C:\Users\vigne\Downloads\Nd3\public\bg\Unti1tled.jpg");
+    background-size: cover;
+    background-position: center;
+    background-origin: border-box;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
 .loading-screen.hidden {
     opacity: 0;
     visibility: hidden;
+
 }
 
 .loader {
@@ -269,9 +285,9 @@ button:hover ~ .cursor-outline {
     position: fixed;
     top: 0;
     right: 0;
-    width: 100%;
+    width: 40%;
     height: 100%;
-    background: rgba(0, 8, 77, 0.678);
+    background: rgba(152, 86, 20, 0.685);
     z-index: 999;
     display: flex;
     align-items: center;
@@ -312,7 +328,7 @@ button:hover ~ .cursor-outline {
 .nav-link {
     color: var(--text);
     text-decoration: none;
-    font-size: 4rem;
+    font-size: 2rem;
     font-weight: 300;
     letter-spacing: 2px;
     position: relative;
@@ -373,7 +389,7 @@ button:hover ~ .cursor-outline {
     transform: translate(-50%, -50%) scale(0);
     font-size: 5rem;
     font-weight: 700;
-    font-family: var(--font-display);
+    font-family: var(--babas-neue);
     color: var(--accent);
     text-shadow: 0 0 20px rgba(135, 206, 235, 0.5);
     z-index: 10;
@@ -384,7 +400,7 @@ button:hover ~ .cursor-outline {
 
 .sphere-text.show {
     opacity: 1;
-    transform: translate(-50%, -50%) scale(1) rotate(5deg);
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
 }
 
 /* ==================== PARTICLES ==================== */

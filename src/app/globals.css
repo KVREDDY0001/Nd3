@@ -1,5 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 
+:root {
+  /* Fonts */
+  --font-heading: 'Bebas Neue', sans-serif;
+  --font-body: 'Space Grotesk', sans-serif;
+}
 :root {
   /* Blue palette */
   --blue-deep: #1a3a6b;
@@ -24,7 +29,7 @@
   --text-muted: #64748b;
 
   /* Fonts */
-  --font-heading: 'Syne', 'Space Grotesk', sans-serif;
+  --font-heading: 'Bebas Neue', sans-serif;
   --font-body: 'Inter', 'DM Sans', sans-serif;
 }
 
@@ -68,7 +73,7 @@ html, body {
 }
 
 ::selection {
-  background: var(--orange-vibrant);
+  background: var(--red-vibrant);
   color: var(--bg-primary);
 }
 

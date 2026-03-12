@@ -1,3 +1,6 @@
+.section h1 {
+  font-family: var(--font-heading);
+}
 .hero {
   position: relative;
   width: 100%;

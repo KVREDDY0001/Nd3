@@ -1,3 +1,6 @@
+.navItem {
+  font-family: var(--font-heading);
+}
 .hamburger {
   position: fixed;
   top: 32px;
